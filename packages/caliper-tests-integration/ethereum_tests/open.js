@@ -72,6 +72,8 @@ class SimpleOpenWorkload extends WorkloadModuleBase {
             workload.push({
                 contract: 'simple',
                 verb: 'open',
+                value: this.roundArguments.money,
+                from: '0x0c312fe7fae449d55df3cf0215f30f6babfa5f43',
                 args: [accountId, this.roundArguments.money],
                 readOnly: false
             });

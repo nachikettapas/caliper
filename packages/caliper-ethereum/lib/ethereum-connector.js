@@ -221,6 +221,12 @@ class EthereumConnector extends ConnectorBase {
         const context = this.context;
         let status = new TxStatus();
         let params = {from: context.fromAddress};
+        if (request.hasOwnProperty('from')) {
+            params.from = request.from;
+        }
+        if (request.hasOwnProperty('value') && request.value > 0) {
+            params.value = request.value;
+        }
         let contractInfo = context.contracts[request.contract];
 
         let receipt = null;
